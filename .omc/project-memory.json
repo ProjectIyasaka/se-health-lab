@@ -1,0 +1,160 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775137688967,
+  "projectRoot": "C:\\Users\\haruc\\se-health-lab",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets",
+      "public",
+      "static"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "archetypes": {
+      "path": "archetypes",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1775137688953,
+      "keyFiles": [
+        "default.md"
+      ]
+    },
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775137688953,
+      "keyFiles": []
+    },
+    "content": {
+      "path": "content",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775137688953,
+      "keyFiles": []
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 0,
+      "lastAccessed": 1775137688954,
+      "keyFiles": []
+    },
+    "i18n": {
+      "path": "i18n",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775137688954,
+      "keyFiles": []
+    },
+    "layouts": {
+      "path": "layouts",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775137688954,
+      "keyFiles": []
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 5,
+      "lastAccessed": 1775137688954,
+      "keyFiles": [
+        "404.html",
+        "index.html",
+        "index.json",
+        "index.xml",
+        "sitemap.xml"
+      ]
+    },
+    "static": {
+      "path": "static",
+      "purpose": "Static files",
+      "fileCount": 0,
+      "lastAccessed": 1775137688954,
+      "keyFiles": []
+    },
+    "themes": {
+      "path": "themes",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1775137688954,
+      "keyFiles": []
+    },
+    "public\\assets": {
+      "path": "public\\assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775137688955,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "hugo.yaml",
+      "accessCount": 6,
+      "lastAccessed": 1775138940969,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\what-is-proton-water.md",
+      "accessCount": 5,
+      "lastAccessed": 1775138194753,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\marathon-runner-hydration.md",
+      "accessCount": 2,
+      "lastAccessed": 1775137948086,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\pe-cream-ingredients.md",
+      "accessCount": 1,
+      "lastAccessed": 1775137945433,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1775137970848,
+      "type": "directory"
+    },
+    {
+      "path": "layouts\\partials\\extend_head.html",
+      "accessCount": 1,
+      "lastAccessed": 1775138795742,
+      "type": "file"
+    },
+    {
+      "path": "assets\\css\\extended\\custom.css",
+      "accessCount": 1,
+      "lastAccessed": 1775138820147,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -1,0 +1,7 @@
+{
+  "tool_name": "Agent",
+  "tool_input_preview": "{\"description\":\"Article 3: PE cosmetics ingredient analysis\",\"prompt\":\"Hugo ブログ「SEエンジニアの健康科学ラボ」の3記事目を新規作成してください。\\n\\n保存先: `C:/Users/haruc/se-health-lab/content/posts/pe-cream-ingredients.md`\\n\\n## 記事テー...",
+  "error": "Agent type 'oh-my-claudecode:executor' not found. Available agents: general-purpose, statusline-setup, Explore, Plan, claude-code-guide, team-builder",
+  "timestamp": "2026-04-02T13:50:36.550Z",
+  "retry_count": 3
+}
