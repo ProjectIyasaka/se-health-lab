@@ -10,7 +10,7 @@ params:
   author: "SE健康ラボ管理人"
   defaultTheme: auto
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
@@ -19,8 +19,23 @@ params:
   homeInfoParams:
     Title: "SEエンジニアの健康科学ラボ"
     Content: |
-      現役SEエンジニアが成分データと科学的根拠で健康製品を徹底解説。
-      「なんとなく体に良い」ではなく、「なぜ体に良いのか」をエンジニア目線でお伝えします。
+      現役ITエンジニアが「成分データ」と「科学的根拠」で健康製品を徹底解説。
+      「なんとなく体に良い」ではなく、「なぜ体に良いのか」をエンジニア目線で語ります。
+
+      ▶ プロトン水・水素水の比較分析
+      ▶ PE製品（薬用コスメ）の成分解析
+      ▶ アスリート・デスクワーカーのコンディショニング
+
+  cover:
+    hiddenInList: false
+    responsiveImages: true
+    linkFullImages: false
+
+  assets:
+    favicon: "/favicon.ico"
+
+  label:
+    text: "SE健康ラボ"
 
   socialIcons:
     - name: x
