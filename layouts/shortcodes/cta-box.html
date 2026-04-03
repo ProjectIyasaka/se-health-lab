@@ -1,0 +1,4 @@
+<div class="sc-cta-box">
+  {{- with .Get "text" }}<p>{{ . }}</p>{{- end }}
+  <a class="btn-cta" href="{{ .Get "url" }}">{{ .Get "label" }}</a>
+</div>

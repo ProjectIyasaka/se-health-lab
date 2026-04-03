@@ -114,10 +114,22 @@
   },
   "hotPaths": [
     {
-      "path": "hugo.yaml",
-      "accessCount": 6,
-      "lastAccessed": 1775138940969,
+      "path": "assets\\css\\extended\\custom.css",
+      "accessCount": 17,
+      "lastAccessed": 1775213042774,
       "type": "file"
+    },
+    {
+      "path": "hugo.yaml",
+      "accessCount": 8,
+      "lastAccessed": 1775212788274,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 6,
+      "lastAccessed": 1775212779284,
+      "type": "directory"
     },
     {
       "path": "content\\posts\\what-is-proton-water.md",
@@ -132,16 +144,22 @@
       "type": "file"
     },
     {
+      "path": "themes\\PaperMod\\layouts\\partials\\footer.html",
+      "accessCount": 2,
+      "lastAccessed": 1775212788660,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\partials\\sidebar.html",
+      "accessCount": 2,
+      "lastAccessed": 1775212920534,
+      "type": "file"
+    },
+    {
       "path": "content\\posts\\pe-cream-ingredients.md",
       "accessCount": 1,
       "lastAccessed": 1775137945433,
       "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 1,
-      "lastAccessed": 1775137970848,
-      "type": "directory"
     },
     {
       "path": "layouts\\partials\\extend_head.html",
@@ -150,9 +168,135 @@
       "type": "file"
     },
     {
-      "path": "assets\\css\\extended\\custom.css",
+      "path": "themes\\PaperMod\\layouts\\_default\\single.html",
       "accessCount": 1,
-      "lastAccessed": 1775138820147,
+      "lastAccessed": 1775211535569,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\layouts\\_default\\list.html",
+      "accessCount": 1,
+      "lastAccessed": 1775211535615,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\_default\\single.html",
+      "accessCount": 1,
+      "lastAccessed": 1775211639233,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\_default\\list.html",
+      "accessCount": 1,
+      "lastAccessed": 1775211650989,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\layouts\\partials\\head.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212306736,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\core\\theme-vars.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212306865,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\common\\main.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212307087,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\layouts\\partials\\header.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212310729,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\common\\header.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212311933,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\common\\post-single.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212314118,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\common\\post-entry.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212314425,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\layouts\\_default\\baseof.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212321450,
+      "type": "file"
+    },
+    {
+      "path": "themes\\PaperMod\\assets\\css\\includes\\scroll-bar.css",
+      "accessCount": 1,
+      "lastAccessed": 1775212325632,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\partials\\home_info.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212910402,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\partials\\footer.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212957129,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\card-grid.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212987795,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\card.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212991023,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\steps.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212992484,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\step.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212993453,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\cta-box.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212994681,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\tips-list.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212995842,
+      "type": "file"
+    },
+    {
+      "path": "layouts\\shortcodes\\summary-box.html",
+      "accessCount": 1,
+      "lastAccessed": 1775212996829,
       "type": "file"
     }
   ],

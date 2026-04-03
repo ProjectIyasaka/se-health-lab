@@ -1,0 +1,70 @@
+{{- define "main" }}
+
+{{- $pages := union .RegularPages .Sections }}
+{{- if .IsHome }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+{{- end }}
+{{- $paginator := .Paginate $pages }}
+
+<div class="home-wrapper">
+
+  <main class="home-main">
+
+    {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+    {{- partial "home_info.html" . }}
+    {{- end }}
+
+    {{- if not .IsHome | and .Title }}
+    <div class="section-heading">{{ .Title }}</div>
+    {{- else if .IsHome }}
+    <div class="section-heading">最新記事</div>
+    {{- end }}
+
+    <div class="post-grid">
+      {{- range $paginator.Pages }}
+
+      {{- $cat := index .Params.categories 0 | default "" }}
+      {{- $thumbClass := "thumb-default" }}
+      {{- if eq $cat "プロトン水" }}{{- $thumbClass = "thumb-proton" }}{{- end }}
+      {{- if eq $cat "PE製品" }}{{- $thumbClass = "thumb-pe" }}{{- end }}
+
+      <a class="post-card" href="{{ .Permalink }}">
+        <div class="post-card-thumb {{ $thumbClass }}">
+          {{ $cat | default "記事" }}
+        </div>
+        <div class="post-card-body">
+          {{- with $cat }}
+          <span class="post-card-cat">{{ . }}</span>
+          {{- end }}
+          <h2 class="post-card-title">{{ .Title | safeHTML }}</h2>
+          <p class="post-card-excerpt">{{ .Summary | plainify | truncate 80 }}</p>
+          <span class="post-card-meta">{{ .Date.Format "2006年01月02日" }}</span>
+        </div>
+      </a>
+
+      {{- end }}
+    </div>
+
+    {{- if gt $paginator.TotalPages 1 }}
+    <footer class="page-footer">
+      <nav class="pagination">
+        {{- if $paginator.HasPrev }}
+        <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« 前のページ</a>
+        {{- end }}
+        {{- if $paginator.HasNext }}
+        <a class="next" href="{{ $paginator.Next.URL | absURL }}">次のページ »</a>
+        {{- end }}
+      </nav>
+    </footer>
+    {{- end }}
+
+  </main>
+
+  <aside class="sidebar">
+    {{- partial "sidebar.html" . }}
+  </aside>
+
+</div>
+
+{{- end }}
