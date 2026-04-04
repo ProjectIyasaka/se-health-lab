@@ -1,6 +1,0 @@
-{{- $items := split (.Get 0) "|" }}
-<ul class="sc-tips-list">
-  {{- range $items }}
-  <li>{{ . | strings.TrimSpace }}</li>
-  {{- end }}
-</ul>
