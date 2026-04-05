@@ -16,6 +16,26 @@
   --radius: 6px;
 }
 
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg: #1a1d23;
+  --bg-alt: #22262f;
+  --text: #d4d8e0;
+  --muted: #8a8fa0;
+  --border: #3a3f4a;
+  --shadow: 0 2px 8px rgba(0,0,0,0.4);
+  --green-light: #1e3329;
+}
+[data-theme="dark"] .site-header { background: #1a1d23; }
+[data-theme="dark"] .article-main,
+[data-theme="dark"] .sidebar-box,
+[data-theme="dark"] .card { background: #22262f; border-color: #3a3f4a; }
+[data-theme="dark"] .article-body blockquote { background: #2a2510; }
+[data-theme="dark"] .article-body pre,
+[data-theme="dark"] .article-body code { background: #2a2d35; color: #d4d8e0; }
+[data-theme="dark"] .article-body tr:nth-child(even) td { background: #22262f; }
+[data-theme="dark"] .hero { background: linear-gradient(135deg, #1a2d24 0%, #1a1d23 100%); }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -390,6 +410,29 @@ a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   gap: 12px;
 }
+/* Dark Mode Toggle */
+.dark-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px 10px;
+  color: var(--text);
+  line-height: 1;
+  margin-left: 16px;
+  transition: background 0.2s;
+}
+.dark-toggle:hover { background: var(--bg-alt); }
+
+/* References */
+.article-references { margin-top: 40px; padding-top: 24px; border-top: 2px solid var(--border); }
+.references-title { font-size: 14px; font-weight: 700; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.05em; }
+.references-list { padding-left: 20px; }
+.references-list li { font-size: 13px; line-height: 1.8; margin-bottom: 4px; }
+.references-list a { color: var(--muted); text-decoration: underline; }
+.references-list a:hover { color: var(--green); }
+
 .footer-disclaimer-bar { border-bottom: 1px solid #444; padding: 12px 20px; }
 .footer-disclaimer-text { max-width: 1100px; margin: 0 auto; font-size: 11px; color: #888; line-height: 1.7; }
 .footer-links { display: flex; gap: 20px; list-style: none; }

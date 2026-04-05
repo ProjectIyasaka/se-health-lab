@@ -14,6 +14,7 @@ export interface PostMeta {
   date: string;
   category: string;
   tldr?: string[];
+  references?: { title: string; url: string }[];
 }
 
 export interface Post extends PostMeta {

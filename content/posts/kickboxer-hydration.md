@@ -8,6 +8,13 @@ tldr:
   - "格闘技の水分管理は「意図的脱水 → 急速リカバリー」という特殊サイクルを持つ"
   - "シリカ・バナジウム含有水が計量後のリカバリーをサポートするメカニズムを解説"
   - "一般アスリートとは異なるミネラル補給プロトコルをデータで比較"
+references:
+  - title: "日本スポーツ協会 スポーツ活動中の熱中症予防ガイドブック"
+    url: "https://www.japan-sports.or.jp/Portals/0/data/ikusei/doc/heat_0.pdf"
+  - title: "厚生労働省 熱中症の予防について"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/nettyuu/index.html"
+  - title: "国立健康・栄養研究所 健康食品の素材情報データベース"
+    url: "https://hfnet.nibiohn.go.jp/"
 ---
 
 ## 格闘技選手の水分管理が「特殊」な理由

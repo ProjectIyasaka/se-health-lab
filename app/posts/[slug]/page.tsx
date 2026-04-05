@@ -93,6 +93,19 @@ export default async function PostPage({ params }: Props) {
               className="article-body"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }}
             />
+
+            {post.references && post.references.length > 0 && (
+              <div className="article-references">
+                <h2 className="references-title">参考文献・データソース</h2>
+                <ul className="references-list">
+                  {post.references.map((ref, i) => (
+                    <li key={i}>
+                      <a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </article>
         </main>
 

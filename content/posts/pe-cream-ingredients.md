@@ -8,6 +8,13 @@ tldr:
   - "薬用P.e-クリームの有効成分（グリチルリチン酸・ナイアシンアミド）を化学的に解析"
   - "「医薬部外品」認定が意味する有効成分の配合根拠を数値で読む"
   - "成分表を「ソースコード」として読み解くエンジニア式解析手法を紹介"
+references:
+  - title: "消費者庁 医薬部外品・化粧品の表示に関する法令"
+    url: "https://www.caa.go.jp/policies/policy/food_labeling/"
+  - title: "厚生労働省 化粧品・医薬部外品の承認・許可について"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/kinou/index.html"
+  - title: "国立健康・栄養研究所 健康食品の素材情報データベース"
+    url: "https://hfnet.nibiohn.go.jp/"
 ---
 
 ## エンジニアが「なんとなく良さそう」コスメに抱く違和感

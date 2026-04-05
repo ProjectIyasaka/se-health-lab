@@ -8,6 +8,13 @@ tldr:
   - "プロトン水と水素水は化学的に別物：プロトン（H⁺）と水素分子（H₂）は異なる"
   - "énazuma7はpH7.3・シリカ72mg/L・バナジウム4.7μg/Lの数値で比較可能"
   - "「体に良さそう」な言葉ではなく成分数値で選ぶ基準をエンジニア視点で解説"
+references:
+  - title: "国立健康・栄養研究所 健康食品の素材情報データベース"
+    url: "https://hfnet.nibiohn.go.jp/"
+  - title: "厚生労働省 食品の安全に関する情報"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/index.html"
+  - title: "消費者庁 健康食品に関する景品表示法・健康増進法上の留意事項"
+    url: "https://www.caa.go.jp/policies/policy/food_labeling/health_promotion/"
 ---
 
 ## はじめに：なぜITエンジニアが「プロトン水 効果」を調べたのか

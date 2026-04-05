@@ -8,6 +8,13 @@ tldr:
   - "マラソン中の発汗でナトリウム・ミネラルが失われ、低ナトリウム血症リスクが生じる"
   - "シリカ72mg/Lが骨・関節・腱の維持に関与するメカニズムを解説"
   - "長距離ランナーに必要なミネラルバランスをデータで比較"
+references:
+  - title: "厚生労働省 熱中症の予防について"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/nettyuu/index.html"
+  - title: "国立健康・栄養研究所 健康食品の素材情報データベース"
+    url: "https://hfnet.nibiohn.go.jp/"
+  - title: "日本陸上競技連盟 マラソン・長距離ロードレース競技規則"
+    url: "https://www.jaaf.or.jp/"
 ---
 
 ## ランナーが水分補給で「失敗」するパターン

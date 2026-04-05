@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DarkModeToggle from './DarkModeToggle';
 
 export default function Header() {
   return (
@@ -18,6 +19,7 @@ export default function Header() {
             <li><Link href="/about">管理人</Link></li>
             <li><Link href="/contact">お問い合わせ</Link></li>
           </ul>
+          <DarkModeToggle />
         </nav>
       </div>
     </header>
