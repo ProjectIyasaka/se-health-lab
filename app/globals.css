@@ -38,6 +38,8 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { overflow-x: hidden; }
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 16px;
@@ -45,8 +47,9 @@ body {
   color: var(--text);
   background: var(--bg);
   letter-spacing: 0.02em;
-  word-break: break-all;
+  word-break: break-word;
   overflow-wrap: break-word;
+  overflow-x: hidden;
 }
 
 a { color: var(--green); text-decoration: none; }
@@ -582,8 +585,14 @@ a:hover { text-decoration: underline; }
   .wrapper { grid-template-columns: 1fr; }
   .article-wrapper { grid-template-columns: 1fr; }
   .site-nav { display: none; }
-  .article-main { padding: 20px 18px; }
+  .article-main { padding: 20px 18px; max-width: 100%; overflow-x: hidden; }
   .article-title { font-size: 20px; }
+  .article-body { max-width: 100%; overflow-x: hidden; }
   .article-body h2 { font-size: 17px; }
+  .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  .article-body img { max-width: 100%; height: auto; }
+  .article-body pre { overflow-x: auto; white-space: pre; }
+  .article-tldr { max-width: 100%; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
+  .header-inner { flex-wrap: wrap; gap: 8px; }
 }
