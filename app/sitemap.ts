@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getSortedPostsData } from '@/lib/posts';
 
+export const dynamic = 'force-static';
+
 const BASE_URL = 'https://se-health-lab.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
