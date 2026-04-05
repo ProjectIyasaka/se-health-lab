@@ -80,6 +80,15 @@ export default async function PostPage({ params }: Props) {
             <h1 className="article-title">{post.title}</h1>
             <p className="article-meta">{post.date} | IT健康ラボ管理人</p>
 
+            {post.tldr && post.tldr.length > 0 && (
+              <div className="article-tldr">
+                <div className="article-tldr-label">TL;DR — この記事のポイント</div>
+                <ul>
+                  {post.tldr.map((point, i) => <li key={i}>{point}</li>)}
+                </ul>
+              </div>
+            )}
+
             <div
               className="article-body"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }}

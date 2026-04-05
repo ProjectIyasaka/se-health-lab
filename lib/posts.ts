@@ -13,6 +13,7 @@ export interface PostMeta {
   description: string;
   date: string;
   category: string;
+  tldr?: string[];
 }
 
 export interface Post extends PostMeta {
