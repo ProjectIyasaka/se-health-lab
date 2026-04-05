@@ -573,6 +573,62 @@ a:hover { text-decoration: underline; }
 .author-box-title { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
 .author-box-bio { font-size: 13px; color: var(--muted); line-height: 1.8; margin: 0; }
 
+/* Spec / Datasheet Table */
+.spec-table {
+  margin-bottom: 24px;
+  border: 2px solid var(--green-dark);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.spec-table::before {
+  content: '// SPEC';
+  display: block;
+  background: var(--green-dark);
+  color: #7de5b0;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 5px 14px;
+  font-family: 'Courier New', monospace;
+}
+.spec-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.spec-table th {
+  background: #1a2d24;
+  color: #7de5b0;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Courier New', monospace;
+}
+.spec-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+}
+.spec-table td:first-child {
+  font-weight: 700;
+  color: var(--green-dark);
+  background: var(--bg-alt);
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table tr:nth-child(even) td { background: #f5fbf8; }
+.spec-table tr:nth-child(even) td:first-child { background: #e8f4ee; }
+[data-theme="dark"] .spec-table { border-color: var(--green); }
+[data-theme="dark"] .spec-table::before { background: #0d1a12; color: #5aaa80; }
+[data-theme="dark"] .spec-table th { background: #0d1a12; color: #5aaa80; }
+[data-theme="dark"] .spec-table td:first-child { background: #1e2a22; }
+[data-theme="dark"] .spec-table tr:nth-child(even) td { background: #232d27; }
+[data-theme="dark"] .spec-table tr:nth-child(even) td:first-child { background: #1e2a22; }
+
 @media (max-width: 768px) {
   .profile-header { flex-direction: column; text-align: center; padding: 24px 18px; }
   .profile-badges { justify-content: center; }
@@ -602,7 +658,7 @@ a:hover { text-decoration: underline; }
   .article-title { font-size: 20px; }
   .article-body { max-width: 100%; overflow-x: hidden; }
   .article-body h2 { font-size: 17px; }
-  .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .article-body table, .spec-table table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .article-body img { max-width: 100%; height: auto; }
   .article-body pre { overflow-x: auto; white-space: pre; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
