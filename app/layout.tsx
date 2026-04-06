@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 
 const BASE_URL = 'https://se-health-lab.com';
@@ -49,6 +50,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G2W2CT50W1"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-G2W2CT50W1');
+          `}
+        </Script>
       </body>
     </html>
   );

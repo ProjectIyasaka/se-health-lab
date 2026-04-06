@@ -1,37 +1,41 @@
 import Link from 'next/link';
+import { getSortedPostsData } from '@/lib/posts';
 
 export default function Sidebar() {
+  const posts = getSortedPostsData();
+  const recentPosts = posts.slice(0, 5);
+
+  // カテゴリ別の記事数（重複除去）
+  const categoryMap = posts.reduce<Record<string, number>>((acc, post) => {
+    acc[post.category] = (acc[post.category] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  // カテゴリごとの代表記事slug（最新）
+  const categorySlug = (cat: string) => posts.find((p) => p.category === cat)!.slug;
+
   return (
     <aside className="sidebar">
       <div className="sidebar-box">
         <div className="sidebar-box-title">新着記事</div>
         <ul className="sidebar-list">
-          <li><Link href="/posts/kickboxer-hydration">キックボクサーの水分補給を科学する</Link></li>
-          <li><Link href="/posts/pe-cream-ingredients">PE製品の成分をエンジニアが解析</Link></li>
-          <li><Link href="/posts/marathon-runner-hydration">マラソンランナーの水分補給を科学する</Link></li>
+          {recentPosts.map((post) => (
+            <li key={post.slug}>
+              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
 
       <div className="sidebar-box">
         <div className="sidebar-box-title">カテゴリ</div>
         <ul className="sidebar-list">
-          <li><Link href="/posts/what-is-proton-water">プロトン水</Link></li>
-          <li><Link href="/posts/pe-cream-ingredients">PE製品</Link></li>
+          {Object.entries(categoryMap).map(([cat, count]) => (
+            <li key={cat}>
+              <Link href={`/posts/${categorySlug(cat)}`}>{cat}（{count}）</Link>
+            </li>
+          ))}
         </ul>
-      </div>
-
-      <div className="sidebar-box">
-        <div className="sidebar-box-title">タグ</div>
-        <div className="tag-cloud">
-          <Link href="/posts/what-is-proton-water">プロトン水</Link>
-          <Link href="/posts/what-is-proton-water">水素水</Link>
-          <Link href="/posts/what-is-proton-water">énazuma7</Link>
-          <Link href="/posts/pe-cream-ingredients">PE製品</Link>
-          <Link href="/posts/pe-cream-ingredients">薬用コスメ</Link>
-          <Link href="/posts/marathon-runner-hydration">マラソン</Link>
-          <Link href="/posts/marathon-runner-hydration">スポーツ栄養</Link>
-          <Link href="/posts/pe-cream-ingredients">成分解析</Link>
-        </div>
       </div>
 
       <div className="sidebar-box">

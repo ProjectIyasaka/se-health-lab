@@ -160,6 +160,12 @@
       "type": "file"
     },
     {
+      "path": "app\\posts\\[slug]\\page.tsx",
+      "accessCount": 8,
+      "lastAccessed": 1775482657686,
+      "type": "file"
+    },
+    {
       "path": "content\\posts\\kickboxer-hydration.md",
       "accessCount": 7,
       "lastAccessed": 1775398232286,
@@ -173,26 +179,20 @@
     },
     {
       "path": "lib\\posts.ts",
-      "accessCount": 5,
-      "lastAccessed": 1775395738092,
+      "accessCount": 6,
+      "lastAccessed": 1775482583559,
       "type": "file"
     },
     {
-      "path": "app\\posts\\[slug]\\page.tsx",
-      "accessCount": 5,
-      "lastAccessed": 1775480555730,
+      "path": "app\\layout.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1775483144626,
       "type": "file"
     },
     {
       "path": "components\\Header.tsx",
       "accessCount": 3,
       "lastAccessed": 1775395724930,
-      "type": "file"
-    },
-    {
-      "path": "app\\layout.tsx",
-      "accessCount": 3,
-      "lastAccessed": 1775480549327,
       "type": "file"
     },
     {
@@ -229,6 +229,12 @@
       "path": "components\\Footer.tsx",
       "accessCount": 2,
       "lastAccessed": 1775393278726,
+      "type": "file"
+    },
+    {
+      "path": "components\\Sidebar.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775482629381,
       "type": "file"
     },
     {
@@ -379,6 +385,12 @@
       "path": "scripts\\generate-og.js",
       "accessCount": 1,
       "lastAccessed": 1775480770592,
+      "type": "file"
+    },
+    {
+      "path": "public\\og\\what-is-proton-water.png",
+      "accessCount": 1,
+      "lastAccessed": 1775482488454,
       "type": "file"
     }
   ],
