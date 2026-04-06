@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cmd /c \\\"move C:\\\\Users\\\\haruc\\\\se-health-lab C:\\\\Users\\\\haruc\\\\projects\\\\\\\" && ls C:/Users/haruc/projects/\",\"description\":\"Move directory using Windows move command\"}",
-  "error": "Exit code 2\n/usr/bin/bash: eval: line 1: unexpected EOF while looking for matching `\"'",
-  "timestamp": "2026-04-04T03:13:59.646Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"rsync -av --exclude='node_modules' --exclude='.next' /c/Users/haruc/projects/se-health-lab-next/ /c/Users/haruc/projects/se-health-lab/ && echo \\\"=== DONE ===\\\"\"}",
+  "error": "Exit code 127\n/usr/bin/bash: line 1: rsync: command not found",
+  "timestamp": "2026-04-05T12:27:32.509Z",
+  "retry_count": 1
 }

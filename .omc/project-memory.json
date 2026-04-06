@@ -1,23 +1,60 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1775137688967,
-  "projectRoot": "C:\\Users\\haruc\\se-health-lab",
+  "lastScanned": 1775397362055,
+  "projectRoot": "C:\\Users\\haruc\\projects\\se-health-lab",
   "techStack": {
-    "languages": [],
-    "frameworks": [],
-    "packageManager": null,
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "15.0.0",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.0.0",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.0.0",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
     "runtime": null
   },
   "build": {
-    "buildCommand": null,
+    "buildCommand": "npm run build",
     "testCommand": null,
     "lintCommand": null,
-    "devCommand": null,
-    "scripts": {}
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start"
+    }
   },
   "conventions": {
-    "namingStyle": null,
-    "importStyle": null,
+    "namingStyle": "camelCase",
+    "importStyle": "ES modules",
     "testPattern": null,
     "fileOrganization": null
   },
@@ -25,98 +62,83 @@
     "isMonorepo": false,
     "workspaces": [],
     "mainDirectories": [
-      "assets",
-      "public",
-      "static"
+      "app",
+      "components",
+      "lib",
+      "public"
     ],
     "gitBranches": null
   },
   "customNotes": [],
   "directoryMap": {
-    "archetypes": {
-      "path": "archetypes",
-      "purpose": null,
-      "fileCount": 1,
-      "lastAccessed": 1775137688953,
+    "app": {
+      "path": "app",
+      "purpose": "Application code",
+      "fileCount": 5,
+      "lastAccessed": 1775397362023,
       "keyFiles": [
-        "default.md"
+        "globals.css",
+        "layout.tsx",
+        "page.tsx",
+        "robots.ts",
+        "sitemap.ts"
       ]
     },
-    "assets": {
-      "path": "assets",
-      "purpose": "Static assets",
-      "fileCount": 0,
-      "lastAccessed": 1775137688953,
-      "keyFiles": []
+    "components": {
+      "path": "components",
+      "purpose": "UI components",
+      "fileCount": 4,
+      "lastAccessed": 1775397362023,
+      "keyFiles": [
+        "DarkModeToggle.tsx",
+        "Footer.tsx",
+        "Header.tsx",
+        "Sidebar.tsx"
+      ]
     },
     "content": {
       "path": "content",
       "purpose": null,
       "fileCount": 0,
-      "lastAccessed": 1775137688953,
+      "lastAccessed": 1775397362041,
       "keyFiles": []
     },
-    "data": {
-      "path": "data",
-      "purpose": "Data files",
-      "fileCount": 0,
-      "lastAccessed": 1775137688954,
-      "keyFiles": []
-    },
-    "i18n": {
-      "path": "i18n",
-      "purpose": null,
-      "fileCount": 0,
-      "lastAccessed": 1775137688954,
-      "keyFiles": []
-    },
-    "layouts": {
-      "path": "layouts",
-      "purpose": null,
-      "fileCount": 0,
-      "lastAccessed": 1775137688954,
-      "keyFiles": []
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1775397362042,
+      "keyFiles": [
+        "posts.ts"
+      ]
     },
     "public": {
       "path": "public",
       "purpose": "Public files",
-      "fileCount": 5,
-      "lastAccessed": 1775137688954,
+      "fileCount": 1,
+      "lastAccessed": 1775397362042,
       "keyFiles": [
-        "404.html",
-        "index.html",
-        "index.json",
-        "index.xml",
         "sitemap.xml"
       ]
-    },
-    "static": {
-      "path": "static",
-      "purpose": "Static files",
-      "fileCount": 0,
-      "lastAccessed": 1775137688954,
-      "keyFiles": []
-    },
-    "themes": {
-      "path": "themes",
-      "purpose": null,
-      "fileCount": 0,
-      "lastAccessed": 1775137688954,
-      "keyFiles": []
-    },
-    "public\\assets": {
-      "path": "public\\assets",
-      "purpose": "Static assets",
-      "fileCount": 0,
-      "lastAccessed": 1775137688955,
-      "keyFiles": []
     }
   },
   "hotPaths": [
     {
+      "path": "app\\globals.css",
+      "accessCount": 20,
+      "lastAccessed": 1775398210072,
+      "type": "file"
+    },
+    {
       "path": "assets\\css\\extended\\custom.css",
       "accessCount": 17,
       "lastAccessed": 1775213042774,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\what-is-proton-water.md",
+      "accessCount": 11,
+      "lastAccessed": 1775398229817,
       "type": "file"
     },
     {
@@ -126,21 +148,51 @@
       "type": "file"
     },
     {
+      "path": "content\\posts\\marathon-runner-hydration.md",
+      "accessCount": 8,
+      "lastAccessed": 1775398231182,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\pe-cream-ingredients.md",
+      "accessCount": 8,
+      "lastAccessed": 1775398243391,
+      "type": "file"
+    },
+    {
+      "path": "content\\posts\\kickboxer-hydration.md",
+      "accessCount": 7,
+      "lastAccessed": 1775398232286,
+      "type": "file"
+    },
+    {
       "path": "",
       "accessCount": 6,
       "lastAccessed": 1775212779284,
       "type": "directory"
     },
     {
-      "path": "content\\posts\\what-is-proton-water.md",
+      "path": "lib\\posts.ts",
       "accessCount": 5,
-      "lastAccessed": 1775138194753,
+      "lastAccessed": 1775395738092,
       "type": "file"
     },
     {
-      "path": "content\\posts\\marathon-runner-hydration.md",
-      "accessCount": 2,
-      "lastAccessed": 1775137948086,
+      "path": "app\\posts\\[slug]\\page.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1775480555730,
+      "type": "file"
+    },
+    {
+      "path": "components\\Header.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1775395724930,
+      "type": "file"
+    },
+    {
+      "path": "app\\layout.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1775480549327,
       "type": "file"
     },
     {
@@ -156,9 +208,27 @@
       "type": "file"
     },
     {
-      "path": "content\\posts\\pe-cream-ingredients.md",
-      "accessCount": 1,
-      "lastAccessed": 1775137945433,
+      "path": "next.config.js",
+      "accessCount": 2,
+      "lastAccessed": 1775392098588,
+      "type": "file"
+    },
+    {
+      "path": "app\\robots.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775392283048,
+      "type": "file"
+    },
+    {
+      "path": "app\\sitemap.ts",
+      "accessCount": 2,
+      "lastAccessed": 1775392298934,
+      "type": "file"
+    },
+    {
+      "path": "components\\Footer.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1775393278726,
       "type": "file"
     },
     {
@@ -297,6 +367,18 @@
       "path": "layouts\\shortcodes\\summary-box.html",
       "accessCount": 1,
       "lastAccessed": 1775212996829,
+      "type": "file"
+    },
+    {
+      "path": "components\\DarkModeToggle.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1775395706319,
+      "type": "file"
+    },
+    {
+      "path": "scripts\\generate-og.js",
+      "accessCount": 1,
+      "lastAccessed": 1775480770592,
       "type": "file"
     }
   ],

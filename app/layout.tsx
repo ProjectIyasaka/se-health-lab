@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: BASE_URL,
     siteName: 'ITエンジニアの健康科学ラボ',
+    images: [{ url: `${BASE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ITエンジニアの健康科学ラボ | 成分データで語る健康科学',
+    description: '現役ITエンジニアが成分データで語る健康科学。プロトン水・薬用コスメを実験中。データと数値で健康製品を徹底解説します。',
+    images: [`${BASE_URL}/og-image.png`],
   },
 };
 
