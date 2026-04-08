@@ -24,17 +24,46 @@
   --muted: #8a8fa0;
   --border: #3a3f4a;
   --shadow: 0 2px 8px rgba(0,0,0,0.4);
-  --green-light: #1e3329;
+  --green: #49b487;
+  --green-dark: #b8f0d2;
+  --green-light: #20392e;
 }
 [data-theme="dark"] .site-header { background: #1a1d23; }
 [data-theme="dark"] .article-main,
 [data-theme="dark"] .sidebar-box,
 [data-theme="dark"] .card { background: #22262f; border-color: #3a3f4a; }
-[data-theme="dark"] .article-body blockquote { background: #2a2510; }
+[data-theme="dark"] .article-body blockquote {
+  background: #1f3028;
+  border-left-color: #49b487;
+  color: #c8d7ce;
+}
 [data-theme="dark"] .article-body pre,
 [data-theme="dark"] .article-body code { background: #2a2d35; color: #d4d8e0; }
 [data-theme="dark"] .article-body tr:nth-child(even) td { background: #22262f; }
-[data-theme="dark"] .hero { background: linear-gradient(135deg, #1a2d24 0%, #1a1d23 100%); }
+[data-theme="dark"] .hero { background: linear-gradient(135deg, #163428 0%, #1a1d23 100%); }
+[data-theme="dark"] .hero h1,
+[data-theme="dark"] .article-body h3,
+[data-theme="dark"] .author-box-name a,
+[data-theme="dark"] .profile-title,
+[data-theme="dark"] .badge,
+[data-theme="dark"] .post-card-cat,
+[data-theme="dark"] .article-cat { color: var(--green-dark); }
+[data-theme="dark"] .article-tldr {
+  background: #1d3027;
+  border-color: #49b487;
+}
+[data-theme="dark"] .article-tldr-label { color: var(--green-dark); }
+[data-theme="dark"] .cta-btn,
+[data-theme="dark"] .profile-contact-cta .cta-btn {
+  background: #f4fff9;
+  color: #184f3a;
+}
+[data-theme="dark"] .site-footer { background: #171b21; }
+[data-theme="dark"] .footer-disclaimer-bar { border-bottom-color: #313844; }
+[data-theme="dark"] .footer-disclaimer-text,
+[data-theme="dark"] .footer-links a,
+[data-theme="dark"] .footer-copy { color: #97a0b0; }
+[data-theme="dark"] .footer-links a:hover { color: #dcefe5; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
