@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "generate-og": "node scripts/generate-og.js",
+    "tweets": "node scripts/generate-tweets.js",
     "build": "node scripts/generate-og.js && next build",
     "start": "next start"
   },
