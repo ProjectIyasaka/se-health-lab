@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getSortedPostsData } from '@/lib/posts';
+import { getCategoryMeta, getSortedPostsData } from '@/lib/posts';
 
 export default function Sidebar() {
   const posts = getSortedPostsData();
@@ -10,9 +10,6 @@ export default function Sidebar() {
     acc[post.category] = (acc[post.category] ?? 0) + 1;
     return acc;
   }, {});
-
-  // カテゴリごとの代表記事slug（最新）
-  const categorySlug = (cat: string) => posts.find((p) => p.category === cat)!.slug;
 
   return (
     <aside className="sidebar">
@@ -32,7 +29,7 @@ export default function Sidebar() {
         <ul className="sidebar-list">
           {Object.entries(categoryMap).map(([cat, count]) => (
             <li key={cat}>
-              <Link href={`/posts/${categorySlug(cat)}`}>{cat}（{count}）</Link>
+              <Link href={`/category/${getCategoryMeta(cat).slug}`}>{cat}（{count}）</Link>
             </li>
           ))}
         </ul>

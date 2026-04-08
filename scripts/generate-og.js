@@ -3,6 +3,24 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
+const CATEGORY_CONFIG = [
+  {
+    slug: 'proton-water',
+    name: 'プロトン水',
+    summary: '違い / 成分 / 水分補給',
+  },
+  {
+    slug: 'supplements',
+    name: 'サプリメント',
+    summary: '成分 / 価格 / 選び方',
+  },
+  {
+    slug: 'pe-products',
+    name: 'PE製品',
+    summary: '有効成分 / 医薬部外品',
+  },
+];
+
 // XML特殊文字エスケープ
 function escapeXml(str) {
   return str
@@ -50,7 +68,7 @@ const SITE_SVG = `
 </svg>`;
 
 // 記事別OGP SVG生成
-function buildArticleSvg({ title, category }) {
+function buildArticleSvg({ title, category, updatedAt }) {
   const lines = wrapTitle(title);
   const lineHeight = 68;
   const totalTitleHeight = lines.length * lineHeight;
@@ -67,6 +85,8 @@ function buildArticleSvg({ title, category }) {
   ).join('\n  ');
 
   const catWidth = category.length * 22 + 48;
+  const updatedLabel = updatedAt ? `更新 ${updatedAt}` : '';
+  const updatedWidth = updatedLabel.length * 12 + 40;
 
   return `
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
@@ -87,12 +107,21 @@ function buildArticleSvg({ title, category }) {
   <text x="108" y="80"
     font-family="'Helvetica Neue', Arial, sans-serif"
     font-size="24" font-weight="bold" fill="#60a5fa" letter-spacing="2">IT HEALTH LAB</text>
+  <text x="108" y="560"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="16" font-weight="bold" fill="#38bdf8" letter-spacing="2">DATA REVIEW ARTICLE</text>
 
   <!-- カテゴリバッジ -->
   <rect x="108" y="100" width="${catWidth}" height="38" rx="19" fill="#1d4ed8" opacity="0.75"/>
   <text x="${108 + 24}" y="125"
     font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
     font-size="20" fill="#93c5fd">${escapeXml(category)}</text>
+
+  <!-- 更新日 -->
+  <rect x="${1200 - updatedWidth - 108}" y="100" width="${updatedWidth}" height="36" rx="18" fill="#0f766e" opacity="0.78"/>
+  <text x="${1200 - updatedWidth - 84}" y="123"
+    font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
+    font-size="18" fill="#ccfbf1">${escapeXml(updatedLabel)}</text>
 
   <!-- 記事タイトル -->
   ${titleElements}
@@ -101,6 +130,53 @@ function buildArticleSvg({ title, category }) {
   <text x="108" y="590"
     font-family="'Helvetica Neue', Arial, sans-serif"
     font-size="20" fill="#475569">se-health-lab.com</text>
+</svg>`;
+}
+
+function buildCategorySvg({ name, slug, summary }) {
+  const lines = wrapTitle(`${name}の記事一覧`, 12);
+  const lineHeight = 74;
+  const totalTitleHeight = lines.length * lineHeight;
+  const titleStartY = Math.round((630 - totalTitleHeight) / 2) + 10;
+
+  const titleElements = lines.map((line, i) =>
+    `<text x="108" y="${titleStartY + i * lineHeight}"
+      font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
+      font-size="58" font-weight="bold" fill="#ffffff">${escapeXml(line)}</text>`
+  ).join('\n  ');
+
+  const nameWidth = name.length * 24 + 56;
+
+  return `
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1100" cy="80" r="220" fill="#1d4ed8" opacity="0.12"/>
+  <circle cx="80" cy="560" r="160" fill="#0ea5e9" opacity="0.10"/>
+  <rect x="80" y="180" width="6" height="250" fill="#3b82f6" rx="3"/>
+
+  <text x="108" y="86"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="24" font-weight="bold" fill="#60a5fa" letter-spacing="2">IT HEALTH LAB CATEGORY</text>
+
+  <rect x="108" y="108" width="${nameWidth}" height="42" rx="21" fill="#1d4ed8" opacity="0.75"/>
+  <text x="136" y="136"
+    font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
+    font-size="22" fill="#bfdbfe">${escapeXml(name)}</text>
+
+  ${titleElements}
+
+  <text x="108" y="510"
+    font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
+    font-size="28" fill="#93c5fd">${escapeXml(summary)}</text>
+  <text x="108" y="585"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="20" fill="#475569">se-health-lab.com/category/${escapeXml(slug)}</text>
 </svg>`;
 }
 
@@ -127,13 +203,23 @@ const postsDir = path.join(__dirname, '..', 'content', 'posts');
 const mdFiles = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
 
 for (const file of mdFiles) {
-  const raw = fs.readFileSync(path.join(postsDir, file), 'utf-8');
+  const fullPath = path.join(postsDir, file);
+  const raw = fs.readFileSync(fullPath, 'utf-8');
+  const stats = fs.statSync(fullPath);
   const { data } = matter(raw);
   const slug = data.slug || path.basename(file, '.md');
   const title = data.title || slug;
   const category = data.category || 'IT健康ラボ';
+  const updatedAt = stats.mtime.toISOString().slice(0, 10);
 
-  renderSvg(buildArticleSvg({ title, category }), path.join(ogDir, `${slug}.png`));
+  renderSvg(buildArticleSvg({ title, category, updatedAt }), path.join(ogDir, `${slug}.png`));
 }
 
-console.log(`\n✓ 完了: ${mdFiles.length} 件の記事OGP + サイト共通OGP`);
+for (const category of CATEGORY_CONFIG) {
+  renderSvg(
+    buildCategorySvg({ name: category.name, slug: category.slug, summary: category.summary }),
+    path.join(ogDir, `category-${category.slug}.png`)
+  );
+}
+
+console.log(`\n✓ 完了: ${mdFiles.length} 件の記事OGP + カテゴリOGP + サイト共通OGP`);

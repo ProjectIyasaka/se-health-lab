@@ -14,10 +14,10 @@ export default function Header() {
         <nav>
           <ul className="site-nav">
             <li><Link href="/">トップ</Link></li>
-            <li><Link href="/posts/what-is-proton-water">プロトン水</Link></li>
-            <li><Link href="/posts/pe-cream-ingredients">PE製品</Link></li>
+            <li><Link href="/category/proton-water">プロトン水</Link></li>
+            <li><Link href="/category/supplements">サプリメント</Link></li>
+            <li><Link href="/category/pe-products">PE製品</Link></li>
             <li><Link href="/about">管理人</Link></li>
-            <li><Link href="/contact">お問い合わせ</Link></li>
           </ul>
           <DarkModeToggle />
         </nav>
