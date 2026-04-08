@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"ls C:/Users/haruc/projects/se-health-lab-next/ && cd C:/Users/haruc/projects/se-health-lab-next && git log --oneline -10 2>/dev/null\",\"description\":\"Check se-health-lab-next directory and ...",
-  "error": "Exit code 128\napp\ncomponents\ncontent\nlib\nnext.config.js\nnext-env.d.ts\nnode_modules\npackage.json\npackage-lock.json\npublic\ntsconfig.json",
-  "timestamp": "2026-04-06T13:15:56.410Z",
-  "retry_count": 1
-}
