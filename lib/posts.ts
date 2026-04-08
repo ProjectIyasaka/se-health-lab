@@ -46,7 +46,11 @@ export async function getPostData(slug: string): Promise<Post> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
-  const processedContent = await remark().use(remarkGfm).use(html).process(content);
+  const processedContent = await remark()
+    .use(remarkGfm)
+    // Posts are authored in-repo and include trusted HTML blocks for CTA/author sections.
+    .use(html, { sanitize: false })
+    .process(content);
   const contentHtml = processedContent.toString();
   return { slug, contentHtml, ...(data as Omit<PostMeta, 'slug'>) };
 }
