@@ -1,7 +1,7 @@
 ---
 title: "桑の葉エキスのDNJとは？ 成分・仕組み・選び方をデータで解説"
 description: "桑の葉エキスの注目成分DNJ（デオキシノジリマイシン）の仕組み、食後血糖値との関係、プロトン水30時間熱水抽出という製法の特徴を整理します。"
-date: "2026-04-08"
+date: "2026-04-07"
 category: "サプリメント"
 slug: "mulberry-leaf-extract-analysis"
 tldr:
