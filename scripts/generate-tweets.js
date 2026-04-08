@@ -8,6 +8,7 @@ const CATEGORY_TAGS = {
   'プロトン水': '#プロトン水 #水素水 #énazuma7 #機能性水',
   'PE製品': '#PE製品 #薬用コスメ #スキンケア #成分解析',
   'スポーツ栄養': '#スポーツ栄養 #水分補給 #アスリート',
+  'サプリメント': '#サプリメント #成分解析 #腸活 #健康投資',
 };
 
 function buildTweet({ title, description, slug, category, tldr }) {
