@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "generate-og": "node scripts/generate-og.js",
+    "generate-rss": "node scripts/generate-rss.js",
     "tweets": "node scripts/generate-tweets.js",
-    "build": "node scripts/generate-og.js && next build",
+    "tweet-post": "node scripts/tweet-post.js",
+    "build": "node scripts/generate-og.js && node scripts/generate-rss.js && next build",
     "start": "next start"
   },
   "dependencies": {
@@ -16,7 +18,8 @@
     "react-dom": "^19.0.0",
     "remark": "^15.0.0",
     "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "twitter-api-v2": "^1.29.0"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",

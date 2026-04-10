@@ -1,6 +1,7 @@
 import { getPostData, getAllPostSlugs, getSortedPostsData } from '@/lib/posts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ShareButtons from '@/components/ShareButtons';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -86,6 +87,31 @@ export default async function PostPage({ params }: Props) {
         })),
       }
     : null;
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: BASE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: post.category,
+        item: `${BASE_URL}/category/${post.categorySlug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `${BASE_URL}/posts/${slug}`,
+      },
+    ],
+  };
+  const shareUrl = `${BASE_URL}/posts/${slug}`;
 
   return (
     <>
@@ -99,6 +125,10 @@ export default async function PostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <div className="breadcrumb">
@@ -113,6 +143,7 @@ export default async function PostPage({ params }: Props) {
             <Link href={`/category/${post.categorySlug}`} className="article-cat">{post.category}</Link>
             <h1 className="article-title">{post.title}</h1>
             <p className="article-meta">公開 {post.date} | 更新 {post.updatedAt} | 読了目安 {post.readingMinutes}分 | IT健康ラボ管理人</p>
+            <ShareButtons title={post.title} url={shareUrl} />
 
             <div className="article-trust-box">
               <div className="article-trust-label">この記事について</div>
@@ -147,6 +178,7 @@ export default async function PostPage({ params }: Props) {
               className="article-body"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }}
             />
+            <ShareButtons title={post.title} url={shareUrl} />
 
             {(relatedPosts.length > 0 || recentPosts.length > 0) && (
               <div className="article-next-reads">

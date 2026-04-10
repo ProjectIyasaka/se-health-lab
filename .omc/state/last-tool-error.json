@@ -1,0 +1,7 @@
+{
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"C:\\\\Users\\\\haruc\\\\projects\\\\se-health-lab\\\\.omc\\\\artifacts\\\\ask\\\\codex-1-breadcrumblist-app-posts-slug-page-tsx-breadcrumblist-json-2026-04-10T11-05-06-486Z.md\"}",
+  "error": "File content (266.3KB) exceeds maximum allowed size (256KB). Use offset and limit parameters to read specific portions of the file, or search for specific content instead of reading the whole file.",
+  "timestamp": "2026-04-10T11:05:09.854Z",
+  "retry_count": 1
+}
