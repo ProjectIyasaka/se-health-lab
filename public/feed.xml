@@ -5,16 +5,8 @@
     <link>https://se-health-lab.com</link>
     <description>現役ITエンジニアが成分データで語る健康科学。プロトン水・薬用コスメを実験中。データと数値で健康製品を徹底解説します。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://se-health-lab.com/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>énazuma7の口コミ・評判を調べた｜成分データと価格で整理する</title>
-      <link>https://se-health-lab.com/posts/enazuma7-review</link>
-      <guid>https://se-health-lab.com/posts/enazuma7-review</guid>
-      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
-      <description>énazuma7の口コミ・評判を、pH7.3・シリカ72mg/L・バナジウム4.7μg/Lの成分データをもとに整理。価格・製法・採水地など比較できる情報をITエンジニア目線で解説します。</description>
-      <category>プロトン水</category>
-    </item>
     <item>
       <title>プロトン水の飲み方｜タイミング・量・続け方の考え方を解説</title>
       <link>https://se-health-lab.com/posts/how-to-drink-proton-water</link>
@@ -29,6 +21,14 @@
       <guid>https://se-health-lab.com/posts/silica-water-vs-proton-water</guid>
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <description>シリカ水とプロトン水の違いを、主成分、比較ポイント、選び方の観点で整理。シリカ量、pH、ミネラル設計の違いをデータで解説します。</description>
+      <category>プロトン水</category>
+    </item>
+    <item>
+      <title>énazuma7の口コミ・評判をレビュー｜成分・価格・定期便を解説</title>
+      <link>https://se-health-lab.com/posts/enazuma7-review</link>
+      <guid>https://se-health-lab.com/posts/enazuma7-review</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+      <description>énazuma7の口コミ・評判を検証。悪い口コミ、シリカ72mg/L・価格・定期便を比較して向いている人を整理します。</description>
       <category>プロトン水</category>
     </item>
     <item>
