@@ -31,19 +31,48 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;');
 }
 
-// タイトルを折り返し（日本語考慮、1行最大20文字、最大3行）
-function wrapTitle(title, maxChars = 20) {
+const BREAK_CHARS = new Set([' ', '　', '｜', '|', '・', '：', ':', '／', '/', '(', '（', '。', '、']);
+const LEADING_PROHIBITED = new Set(['｜', '|', '・', '：', ':', '）', ')', ']', '】', '』', '」', '、', '。', '？', '?']);
+
+// タイトルを折り返し（禁則を少し考慮しつつ、1行最大文字数・最大行数を守る）
+function wrapTitle(title, maxChars = 20, maxLines = 3) {
+  const chars = Array.from(title.trim());
   const lines = [];
-  let current = '';
-  for (const char of title) {
-    current += char;
-    if (current.length >= maxChars) {
-      lines.push(current);
-      current = '';
+  let index = 0;
+
+  while (index < chars.length && lines.length < maxLines) {
+    const remaining = chars.length - index;
+    const remainingLines = maxLines - lines.length;
+    let target = Math.min(maxChars, Math.ceil(remaining / remainingLines));
+
+    if (remaining <= maxChars || lines.length === maxLines - 1) {
+      lines.push(chars.slice(index).join(''));
+      break;
     }
+
+    let end = Math.min(index + maxChars, chars.length);
+    let breakAt = -1;
+
+    for (let i = index; i < end; i += 1) {
+      if (BREAK_CHARS.has(chars[i])) breakAt = i + 1;
+    }
+
+    if (breakAt === -1 || breakAt - index < Math.max(6, target - 5)) {
+      breakAt = end;
+    }
+
+    while (breakAt < chars.length && LEADING_PROHIBITED.has(chars[breakAt])) {
+      breakAt += 1;
+    }
+
+    lines.push(chars.slice(index, breakAt).join('').trim());
+    index = breakAt;
   }
-  if (current) lines.push(current);
-  return lines.slice(0, 3);
+
+  return lines
+    .map(line => line.trim())
+    .filter(Boolean)
+    .slice(0, maxLines);
 }
 
 // サイト共通OGP（トップページ用）
@@ -63,13 +92,13 @@ const SITE_SVG = `
   <text x="108" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="bold" fill="#ffffff">IT Engineer's</text>
   <text x="108" y="375" font-family="'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="bold" fill="#ffffff">Health Science Lab</text>
   <text x="108" y="435" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" fill="#93c5fd">Proton Water / Cosmetics / Sports Nutrition</text>
-  <text x="108" y="580" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" fill="#475569">se-health-lab.com</text>
+  <text x="108" y="580" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" fill="#7dd3fc">se-health-lab.com</text>
   <text x="980" y="400" font-family="'Helvetica Neue', Arial, sans-serif" font-size="120" fill="#1d4ed8" opacity="0.3">⚗</text>
 </svg>`;
 
 // 記事別OGP SVG生成
 function buildArticleSvg({ title, category, updatedAt }) {
-  const lines = wrapTitle(title);
+  const lines = wrapTitle(title, 20, 3);
   const lineHeight = 68;
   const totalTitleHeight = lines.length * lineHeight;
 
@@ -109,7 +138,7 @@ function buildArticleSvg({ title, category, updatedAt }) {
     font-size="24" font-weight="bold" fill="#60a5fa" letter-spacing="2">IT HEALTH LAB</text>
   <text x="108" y="560"
     font-family="'Helvetica Neue', Arial, sans-serif"
-    font-size="16" font-weight="bold" fill="#38bdf8" letter-spacing="2">DATA REVIEW ARTICLE</text>
+    font-size="16" font-weight="bold" fill="#7dd3fc" letter-spacing="2">EVIDENCE REVIEW</text>
 
   <!-- カテゴリバッジ -->
   <rect x="108" y="100" width="${catWidth}" height="38" rx="19" fill="#1d4ed8" opacity="0.75"/>
@@ -129,12 +158,12 @@ function buildArticleSvg({ title, category, updatedAt }) {
   <!-- ドメイン -->
   <text x="108" y="590"
     font-family="'Helvetica Neue', Arial, sans-serif"
-    font-size="20" fill="#475569">se-health-lab.com</text>
+    font-size="20" fill="#93c5fd">se-health-lab.com</text>
 </svg>`;
 }
 
 function buildCategorySvg({ name, slug, summary }) {
-  const lines = wrapTitle(`${name}の記事一覧`, 12);
+  const lines = wrapTitle(`${name}の記事一覧`, 12, 2);
   const lineHeight = 74;
   const totalTitleHeight = lines.length * lineHeight;
   const titleStartY = Math.round((630 - totalTitleHeight) / 2) + 10;
@@ -173,10 +202,10 @@ function buildCategorySvg({ name, slug, summary }) {
 
   <text x="108" y="510"
     font-family="'Yu Gothic', 'Meiryo', 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif"
-    font-size="28" fill="#93c5fd">${escapeXml(summary)}</text>
+    font-size="28" fill="#bfdbfe">${escapeXml(summary)}</text>
   <text x="108" y="585"
     font-family="'Helvetica Neue', Arial, sans-serif"
-    font-size="20" fill="#475569">se-health-lab.com/category/${escapeXml(slug)}</text>
+    font-size="20" fill="#93c5fd">se-health-lab.com/category/${escapeXml(slug)}</text>
 </svg>`;
 }
 
@@ -200,7 +229,7 @@ renderSvg(SITE_SVG, path.join(publicDir, 'og-image.png'));
 
 // 2. 記事別OGP
 const postsDir = path.join(__dirname, '..', 'content', 'posts');
-const mdFiles = fs.readdirSync(postsDir).filter(f => f.endsWith('.md'));
+const mdFiles = fs.readdirSync(postsDir).filter(f => f.endsWith('.md') && !f.startsWith('_'));
 
 for (const file of mdFiles) {
   const fullPath = path.join(postsDir, file);

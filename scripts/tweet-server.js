@@ -3,39 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const matter = require('gray-matter');
+const { buildTweet, getTweetLength, MAX_TWEET_LENGTH } = require('./lib/tweet-utils');
 
 const PORT = 3001;
-const SITE_URL = 'https://se-health-lab.com';
 const BROWSER_DIR = path.join(__dirname, '..', 'browser');
 const POSTED_JSON = path.join(BROWSER_DIR, 'posted.json');
 const POSTS_DIR = path.join(__dirname, '..', 'content', 'posts');
 const BAT_FILE = path.join(__dirname, 'open-dashboard.bat');
 
-const CATEGORY_TAGS = {
-  'プロトン水': '#プロトン水 #水素水 #énazuma7 #機能性水',
-  'PE製品': '#PE製品 #薬用コスメ #スキンケア #成分解析',
-  'スポーツ栄養': '#スポーツ栄養 #水分補給 #アスリート',
-  'サプリメント': '#サプリメント #成分解析 #腸活 #健康投資',
-};
-
-// --- データ操作 ---
-
-function buildTweet({ title, slug, category, tldr }) {
-  const url = `${SITE_URL}/posts/${slug}`;
-  const tags = CATEGORY_TAGS[category] || `#${category} #健康科学`;
-  const points = (tldr || []).slice(0, 2).map(p => `・${p}`).join('\n');
-  const body = points
-    ? `${points}\n\n記事全文 → ${url}`
-    : `記事全文 → ${url}`;
-  return `【${title}】\n\n${body}\n\n${tags} #ITエンジニア #健康科学ラボ`;
-}
-
-function getTweetLength(tweet) {
-  return tweet.replace(/https?:\/\/\S+/g, 'x'.repeat(23)).length;
-}
-
 function loadPosts() {
-  const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
+  const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md') && !f.startsWith('_'));
   return files
     .map(file => {
       const raw = fs.readFileSync(path.join(POSTS_DIR, file), 'utf-8');
@@ -79,7 +56,7 @@ function buildHtml(posts, posted) {
   function card(post, isPosted) {
     const tweet = buildTweet(post);
     const len = getTweetLength(tweet);
-    const lenWarn = len > 280 ? `<span class="warn">${len}文字 ⚠️</span>` : `<span class="ok">${len}文字</span>`;
+    const lenWarn = len > MAX_TWEET_LENGTH ? `<span class="warn">${len}文字 ⚠️</span>` : `<span class="ok">${len}文字</span>`;
     const intentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweet)}`;
     const isRec = recommended.has(post.slug);
 

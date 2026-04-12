@@ -16,6 +16,9 @@ export interface PostMeta {
   category: string;
   categorySlug: string;
   readingMinutes?: number;
+  hashtags?: string[];
+  tweet_title?: string;
+  tweet_points?: string[];
   tldr?: string[];
   faq?: { question: string; answer: string }[];
   references?: { title: string; url: string; isPrimary?: boolean }[];
@@ -147,7 +150,7 @@ export function getPostsByCategory(categorySlug: string): { category: CategoryMe
 export function getSortedPostsData(): PostMeta[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
-    .filter((fn) => fn.endsWith('.md'))
+    .filter((fn) => fn.endsWith('.md') && !fn.startsWith('_'))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
@@ -167,7 +170,7 @@ export function getSortedPostsData(): PostMeta[] {
 
 export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.filter((fn) => fn.endsWith('.md')).map((fileName) => ({
+  return fileNames.filter((fn) => fn.endsWith('.md') && !fn.startsWith('_')).map((fileName) => ({
     params: { slug: fileName.replace(/\.md$/, '') },
   }));
 }

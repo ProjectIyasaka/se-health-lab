@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 const { TwitterApi } = require('twitter-api-v2');
-
-const SITE_URL = 'https://se-health-lab.com';
+const { buildTweet, getTweetLength, MAX_TWEET_LENGTH } = require('./lib/tweet-utils');
 const envPath = path.join(__dirname, '..', '.env.local');
 
 function loadEnvFile(filePath) {
@@ -36,10 +35,6 @@ function requireEnv(key) {
   return value;
 }
 
-function buildTweet(post) {
-  return `${post.title}\n${SITE_URL}/posts/${post.slug}`;
-}
-
 async function main() {
   loadEnvFile(envPath);
 
@@ -58,6 +53,9 @@ async function main() {
   const post = {
     slug,
     title: data.title || slug,
+    category: data.category || '健康科学',
+    tldr: Array.isArray(data.tldr) ? data.tldr : [],
+    hashtags: Array.isArray(data.hashtags) ? data.hashtags : [],
   };
 
   const client = new TwitterApi({
@@ -68,6 +66,10 @@ async function main() {
   });
 
   const tweet = buildTweet(post);
+  const length = getTweetLength(tweet);
+  if (length > MAX_TWEET_LENGTH) {
+    throw new Error(`投稿文が長すぎます: ${length}文字`);
+  }
   const response = await client.v2.tweet(tweet);
   console.log(`✓ Tweet posted: ${response.data.id}`);
 }

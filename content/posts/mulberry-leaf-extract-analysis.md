@@ -4,6 +4,15 @@ description: "桑の葉エキスの注目成分DNJ（デオキシノジリマイ
 date: "2026-04-07"
 category: "サプリメント"
 slug: "mulberry-leaf-extract-analysis"
+hashtags:
+  - サプリメント
+  - 桑の葉
+  - DNJ
+  - 成分解析
+tweet_title: "桑の葉エキスのDNJ｜成分と選び方を整理"
+tweet_points:
+  - "DNJは糖質の分解に関わる仕組みで研究されている"
+  - "比較ではDNJだけでなく抽出製法や1日量も確認したい"
 tldr:
   - "桑の葉エキスの注目成分DNJは、糖質の分解に関わる仕組みで研究されている"
   - "選ぶときは、DNJの考え方に加えて抽出製法や1日量も確認したい"
