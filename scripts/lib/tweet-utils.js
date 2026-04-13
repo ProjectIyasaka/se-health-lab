@@ -11,7 +11,7 @@ const CATEGORY_TAGS = {
   'サプリメント': ['#サプリメント', '#成分解析', '#腸活', '#健康投資'],
 };
 
-const BRAND_TAGS = ['#健康科学ラボ', '#ITエンジニア'];
+const BRAND_TAGS = ['#IT健康ラボ', '#ITエンジニア'];
 
 function getTweetLength(text) {
   return twitterText.parseTweet(text).weightedLength;
@@ -52,12 +52,19 @@ function normalizeHashtag(tag) {
   if (!tag) return '';
   const trimmed = String(tag).trim().replace(/\s+/g, '');
   if (!trimmed) return '';
-  return trimmed.startsWith('#') ? trimmed : `#${trimmed}`;
+  const normalized = trimmed.startsWith('#') ? trimmed : `#${trimmed}`;
+  return normalized === '#健康科学ラボ' ? '#IT健康ラボ' : normalized;
 }
 
 function getManualTags(post) {
   if (!Array.isArray(post.hashtags)) return [];
   return uniq(post.hashtags.map(normalizeHashtag)).filter(Boolean);
+}
+
+function normalizeTextLines(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value.map(line => String(line).trim()).filter(Boolean);
+  return [String(value).trim()].filter(Boolean);
 }
 
 function getTagSets(post) {
@@ -94,6 +101,64 @@ function composeTweet({ title, slug, points = [], tags = [] }) {
   const footer = `\n\n記事全文 → ${url}`;
   const tagBlock = tags.length ? `\n\n${tags.join(' ')}` : '';
   return `${titleBlock}${pointBlock}${footer}${tagBlock}`;
+}
+
+function composeKnowledgeTweet(item) {
+  const headline = item.headline || 'エンジニア健康メモ';
+  const hook = normalizeTextLines(item.hook);
+  const facts = normalizeTextLines(item.facts);
+  const action = normalizeTextLines(item.action);
+  const tagSets = getTagSets(item);
+
+  const factVariants = [
+    facts,
+    facts.slice(0, 2),
+    facts.slice(0, 1),
+    facts[0] ? [trimToLength(facts[0], 55)] : [],
+  ];
+
+  const actionVariants = [
+    action,
+    action[0] ? [trimToLength(action[0], 45)] : [],
+    [],
+  ];
+
+  for (const currentFacts of factVariants) {
+    for (const currentAction of actionVariants) {
+      for (const tags of tagSets) {
+        const sections = [
+          `【${headline}】`,
+          hook.join('\n'),
+          currentFacts.join('\n'),
+          currentAction.join('\n'),
+          tags.join(' '),
+        ].filter(Boolean);
+        const tweet = sections.join('\n\n');
+        if (getTweetLength(tweet) <= TARGET_TWEET_LENGTH) return tweet;
+      }
+    }
+  }
+
+  return [
+    `【${headline}】`,
+    hook[0] || '',
+    facts[0] ? trimToLength(facts[0], 48) : '',
+    getTagSets(item)[0].slice(0, 2).join(' '),
+  ].filter(Boolean).join('\n\n');
+}
+
+function composeQuestionTweet(item) {
+  const prompt = normalizeTextLines(item.prompt).join('\n');
+  const options = normalizeTextLines(item.options).join('\n');
+  const tags = getTagSets(item)[0];
+
+  const sections = [
+    prompt,
+    options,
+    tags.join(' '),
+  ].filter(Boolean);
+
+  return sections.join('\n\n');
 }
 
 function buildTweet(post) {
@@ -148,11 +213,20 @@ function buildTweet(post) {
       });
 }
 
+function buildQueuedTweet(item) {
+  if (item.kind === 'knowledge') return composeKnowledgeTweet(item);
+  if (item.kind === 'question') return composeQuestionTweet(item);
+  return buildTweet(item);
+}
+
 module.exports = {
   SITE_URL,
   MAX_TWEET_LENGTH,
   TARGET_TWEET_LENGTH,
   CATEGORY_TAGS,
+  BRAND_TAGS,
   getTweetLength,
   buildTweet,
+  buildQueuedTweet,
+  normalizeHashtag,
 };

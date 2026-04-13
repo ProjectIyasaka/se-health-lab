@@ -1,0 +1,150 @@
+{
+  "items": [
+    {
+      "id": "knowledge-dehydration-focus",
+      "kind": "knowledge",
+      "title": "集中力と脱水の関係",
+      "headline": "エンジニア健康メモ",
+      "hook": "集中力低下の原因、脱水かもしれない。",
+      "facts": [
+        "脳は体重の約2%だが水分の影響を受けやすい。",
+        "軽い脱水でも集中力や判断力が落ちやすい。",
+        "深夜コーディングで水分ゼロは地味にパフォーマンスを削る。"
+      ],
+      "action": "仕事前と昼食後の1杯を固定すると抜け漏れを防ぎやすいです。",
+      "theme": "水分補給",
+      "goal": "集中力低下の原因を健康課題として認知させる",
+      "reusable": true,
+      "status": "ready",
+      "lastUsedAt": null,
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#エンジニア健康",
+        "#ITエンジニア",
+        "#健康投資"
+      ],
+      "priority": 12
+    },
+    {
+      "id": "knowledge-caffeine-hydration",
+      "kind": "knowledge",
+      "title": "コーヒー偏重を見直す",
+      "headline": "エンジニア健康メモ",
+      "hook": "コーヒーだけで1日を回すと、午後に失速しやすい。",
+      "facts": [
+        "カフェインは眠気対策になるが、水分補給そのものの代わりにはならない。",
+        "会議と実装が続く日は、気づかないまま飲水量が不足しやすい。",
+        "頭が重い、目が乾く、集中が切れる時はまず水分を疑う価値がある。"
+      ],
+      "action": "コーヒー1杯ごとに水も1杯、をルール化すると崩れにくいです。",
+      "theme": "水分補給",
+      "goal": "コーヒー偏重の習慣に気づかせて保存・共感を狙う",
+      "reusable": true,
+      "status": "active",
+      "lastUsedAt": "2026-04-13",
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#エンジニア健康",
+        "#プログラマー",
+        "#水分補給"
+      ],
+      "priority": 22
+    },
+    {
+      "id": "question-hydration-workstyle",
+      "kind": "question",
+      "title": "仕事中の水分補給アンケート",
+      "prompt": "エンジニアのみなさん、仕事中の水分補給ってどうしてますか？",
+      "options": [
+        "A. コーヒー・お茶メイン",
+        "B. 水（ミネラルウォーター）",
+        "C. エナドリ・炭酸",
+        "D. 飲むのを忘れがち"
+      ],
+      "theme": "水分補給",
+      "goal": "返信しやすい質問でエンゲージメントを増やす",
+      "reusable": true,
+      "status": "ready",
+      "lastUsedAt": null,
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#エンジニア",
+        "#ITエンジニア"
+      ],
+      "priority": 18
+    },
+    {
+      "id": "question-body-pain",
+      "kind": "question",
+      "title": "在宅勤務の不調アンケート",
+      "prompt": "在宅勤務や長時間作業で、いちばんつらい不調はどれですか？",
+      "options": [
+        "A. 肩こり",
+        "B. 目の疲れ",
+        "C. 腰痛",
+        "D. むくみ・だるさ"
+      ],
+      "theme": "在宅ワーク不調",
+      "goal": "悩みの分布を把握して次の投稿テーマ選定に使う",
+      "reusable": true,
+      "status": "ready",
+      "lastUsedAt": null,
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#在宅ワーク",
+        "#ITエンジニア",
+        "#健康投資"
+      ],
+      "priority": 28
+    },
+    {
+      "id": "knowledge-morning-reset",
+      "kind": "knowledge",
+      "title": "朝の立ち上がりを整える",
+      "headline": "エンジニア健康メモ",
+      "hook": "朝イチの体の重さは、寝不足だけが原因ではない。",
+      "facts": [
+        "起床直後は水分不足の状態から始まるので、頭も体も重く感じやすい。",
+        "そのままコーヒーだけで始めると、午前中の集中が安定しにくい。",
+        "最初の10分で水分と軽い動きを入れるだけでも切り替えやすくなる。"
+      ],
+      "action": "始業前に水1杯と肩回し30秒を固定すると、朝の立ち上がりが安定しやすいです。",
+      "theme": "朝ルーティン",
+      "goal": "朝のセルフケア習慣を提案して保存率を狙う",
+      "reusable": true,
+      "status": "ready",
+      "lastUsedAt": null,
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#エンジニア健康",
+        "#朝活",
+        "#健康投資"
+      ],
+      "priority": 32
+    },
+    {
+      "id": "question-afternoon-slump",
+      "kind": "question",
+      "title": "午後の失速アンケート",
+      "prompt": "午後の作業でいちばんパフォーマンスが落ちる要因、何が大きいですか？",
+      "options": [
+        "A. 昼食後の眠気",
+        "B. 水分不足",
+        "C. 会議の連続",
+        "D. 目・肩の疲れ"
+      ],
+      "theme": "午後の失速",
+      "goal": "午後の不調に関する共感を集めて次の豆知識につなげる",
+      "reusable": true,
+      "status": "ready",
+      "lastUsedAt": null,
+      "category": "ITエンジニア健康",
+      "hashtags": [
+        "#エンジニア",
+        "#ITエンジニア",
+        "#健康投資"
+      ],
+      "priority": 38
+    }
+  ]
+}
