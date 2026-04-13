@@ -5,8 +5,24 @@
     <link>https://se-health-lab.com</link>
     <description>現役ITエンジニアが成分データで語る健康科学。プロトン水・薬用コスメを実験中。データと数値で健康製品を徹底解説します。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://se-health-lab.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>P.e-スプレーとP.e-クリームの違いを比較｜ITエンジニアのための選び方ガイド</title>
+      <link>https://se-health-lab.com/posts/pe-spray-vs-cream</link>
+      <guid>https://se-health-lab.com/posts/pe-spray-vs-cream</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <description>P.e-スプレーとP.e-クリームの剤形・使用感・用途の違いをエンジニア視点で比較。どちらを選ぶべきか、または併用すべきかを成分と使い方の観点から解説します。</description>
+      <category>PE製品</category>
+    </item>
+    <item>
+      <title>記事用タイトルを入れる</title>
+      <link>https://se-health-lab.com/posts/new-post-slug</link>
+      <guid>https://se-health-lab.com/posts/new-post-slug</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <description>記事の要約を120-160文字程度で入れる。検索結果やSNSカードで読まれる前提で書く。</description>
+      <category>プロトン水</category>
+    </item>
     <item>
       <title>プロトン水の飲み方｜タイミング・量・続け方の考え方を解説</title>
       <link>https://se-health-lab.com/posts/how-to-drink-proton-water</link>
@@ -24,11 +40,11 @@
       <category>プロトン水</category>
     </item>
     <item>
-      <title>énazuma7の口コミ・評判をレビュー｜成分・価格・定期便を解説</title>
+      <title>énazuma7レビュー｜ITエンジニアが選んだ理由・口コミ・成分を正直に解説</title>
       <link>https://se-health-lab.com/posts/enazuma7-review</link>
       <guid>https://se-health-lab.com/posts/enazuma7-review</guid>
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
-      <description>énazuma7の口コミ・評判を検証。悪い口コミ、シリカ72mg/L・価格・定期便を比較して向いている人を整理します。</description>
+      <description>énazuma7（enazuma7／イナズマ7）をITエンジニア目線でレビュー。シリカ72mg/L・1本約370円のコスト・私が選んだ3つの理由を正直に解説します。</description>
       <category>プロトン水</category>
     </item>
     <item>
