@@ -126,7 +126,7 @@ export default async function CategoryPage({ params }: Props) {
         </div>
       </div>
 
-      <section className="category-hero">
+      <section className="category-hero" id="main-content">
         <div className="category-hero-inner">
           <span className="category-hero-label">CATEGORY</span>
           <h1>{category.name}</h1>

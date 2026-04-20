@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <>
       <Header />
 
-      <div className="page-wrapper">
+      <div className="page-wrapper" id="main-content">
         <h1 className="page-title">プライバシーポリシー</h1>
         <div className="page-body">
 

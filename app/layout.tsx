@@ -50,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">メインコンテンツへスキップ</a>
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G2W2CT50W1"

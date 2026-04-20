@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <Header />
 
-      <section className="hero">
+      <section className="hero" id="main-content">
         <div className="hero-inner">
           <h1>ITエンジニアの健康科学ラボ</h1>
           <p>「なんとなく体に良い」ではなく、「なぜ体に良いのか」をエンジニア目線で語ります。<br />

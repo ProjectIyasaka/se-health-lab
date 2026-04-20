@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import DarkModeToggle from './DarkModeToggle';
+import MobileNav from './MobileNav';
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
             <span className="tagline">現役エンジニアが成分データで語る健康科学</span>
           </div>
         </Link>
-        <nav>
+        <nav aria-label="メインナビゲーション">
           <ul className="site-nav">
             <li><Link href="/">トップ</Link></li>
             <li><Link href="/category/proton-water">プロトン水</Link></li>
@@ -21,6 +22,7 @@ export default function Header() {
           </ul>
           <DarkModeToggle />
         </nav>
+        <MobileNav />
       </div>
     </header>
   );

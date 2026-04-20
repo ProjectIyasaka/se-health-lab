@@ -138,7 +138,7 @@ export default async function PostPage({ params }: Props) {
       </div>
 
       <div className="article-wrapper">
-        <main>
+        <main id="main-content">
           <article className="article-main">
             <Link href={`/category/${post.categorySlug}`} className="article-cat">{post.category}</Link>
             <h1 className="article-title">{post.title}</h1>

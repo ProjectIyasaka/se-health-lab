@@ -19,7 +19,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="page-wrapper">
+      <div className="page-wrapper" id="main-content">
 
         <div className="profile-header">
           <div className="profile-avatar">IT</div>
