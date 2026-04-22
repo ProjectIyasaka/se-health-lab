@@ -1,6 +1,6 @@
 ---
-title: "シリカ水とプロトン水の違い｜成分・選び方・向いている人を解説"
-description: "シリカ水とプロトン水の違いを、主成分、比較ポイント、選び方の観点で整理。シリカ量、pH、ミネラル設計の違いをデータで解説します。"
+title: "シリカ水vsプロトン水｜どちらを選ぶか成分・価格・目的で比較した"
+description: "シリカ水とプロトン水の違いを主成分・pH・ミネラル設計のデータで比較。あなたの目的（シリカ重視 or 複合ミネラル）に合わせてどちらを選ぶか判断できます。"
 date: "2026-04-10"
 category: "プロトン水"
 slug: "silica-water-vs-proton-water"
@@ -123,6 +123,15 @@ references:
 | すでに使っているシリカ水がある | 現状継続 or 成分比較して切り替えを検討 |
 
 水選びに迷ったときは、公開されている成分情報の量を確認する。それだけでも判断の解像度がかなり上がります。
+
+<div class="related-posts">
+<p><strong>関連記事</strong></p>
+<ul>
+<li><a href="/posts/what-is-proton-water">プロトン水とは？水素水との違い・成分をITエンジニアがデータで比較</a></li>
+<li><a href="/posts/how-to-choose-proton-water">プロトン水の選び方｜成分・pH・価格で比較する3つのポイント</a></li>
+<li><a href="/posts/enazuma7-review">énazuma7レビュー｜ITエンジニアが実際に選んだ3つの理由と成分・口コミ</a></li>
+</ul>
+</div>
 
 <div class="cta-box">
 <p>énazuma7 はシリカ・pH・バナジウムの3項目が公開されており、「自分で確認して選びたい」方に向いています。</p>
