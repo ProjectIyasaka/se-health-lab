@@ -5,8 +5,16 @@
     <link>https://se-health-lab.com</link>
     <description>現役ITエンジニアが成分データで語る健康科学。プロトン水・薬用コスメを実験中。データと数値で健康製品を徹底解説します。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://se-health-lab.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>テレワークの水分補給｜在宅エンジニアが見落としがちな量・タイミング・水の選び方</title>
+      <link>https://se-health-lab.com/posts/telework-hydration</link>
+      <guid>https://se-health-lab.com/posts/telework-hydration</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description>テレワーク中は移動がないぶん水を飲む習慣が崩れやすい。1〜2%の軽脱水でも集中力・判断力に影響するという研究をもとに、在宅勤務のエンジニアが実践できる量・タイミング・水の選び方を整理した。</description>
+      <category>健康習慣</category>
+    </item>
     <item>
       <title>P.e-スプレーvsP.e-クリーム｜顔・背中への使い分けと違いを比較</title>
       <link>https://se-health-lab.com/posts/pe-spray-vs-cream</link>

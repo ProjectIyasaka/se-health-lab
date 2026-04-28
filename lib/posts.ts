@@ -102,6 +102,19 @@ const categoryConfig: Record<string, CategoryMeta> = {
       answer: 'このカテゴリで扱う薬用P.e-クリームなどは医薬部外品で、有効成分と効能表現に一定のルールがあります。選ぶときは、医薬部外品として何が有効成分なのかを先に確認するのが基本です。',
     },
   },
+  健康習慣: {
+    name: '健康習慣',
+    slug: 'health-habits',
+    description: 'テレワーク・デスクワーク中のコンディション管理に役立つ健康習慣をまとめたカテゴリです。水分補給・睡眠・姿勢など、エンジニアが日常で実践できる習慣をデータで整理しています。',
+    featuredSlug: 'telework-hydration',
+    readingGuide: [
+      { label: '最初に読む', slug: 'telework-hydration' },
+    ],
+    faq: {
+      question: 'テレワーク中のコンディション管理で最初に見直すべきことは？',
+      answer: '水分補給が最も見落とされやすく、効果が出やすい習慣です。通勤がなくなると補給のきっかけが減るため、意識的に仕組みを作ることが重要です。',
+    },
+  },
 };
 
 function estimateReadingMinutes(content: string): number {
